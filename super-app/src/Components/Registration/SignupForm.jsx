@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import RegtImage from './Images/Registration.png';
 import './Registration.css';
 
-const Registration = () => {
+const SignupForm = () => {
     const [userData, setUserData] = useState({
         name: '',
         username: '',
@@ -63,16 +62,8 @@ const Registration = () => {
             console.log(termsAccepted);
         }
     }
-
-
-
-    return (
-        <div className="registration-page">
-            <div className="image-container">
-                <img src={RegtImage} alt="Registration Image" />
-                <div id="image-text">Discover new things on Superapp</div>
-            </div>
-            <div className="form-container">
+  return (
+    <div className="form-container">
                 <div className="form-heading">
                     <p id="app-name">Super app</p>
                     <p id="app-heading">Create your new account</p>
@@ -128,8 +119,7 @@ const Registration = () => {
                 </form>
 
             </div>
-        </div>
-    )
+  )
 }
 
-export default Registration;
+export default SignupForm;

@@ -1,10 +1,13 @@
 import './App.css';
-import Registration from './Components/Registration';
-
+import { Routes, Route } from 'react-router-dom';
+import RegistrationPage from './Pages/RegistrationPage';
 function App() {
   return (
     <div className="App">
-      <Registration/>
+      {/* <RegistrationPage/> */}
+      <Routes>
+        <Route path='/' element={<RegistrationPage/>}/>
+      </Routes>
     </div>
   );
 }
