@@ -2,6 +2,7 @@ import React from 'react'
 import '../Components/HomePage/HomePage.css';
 import Profile from '../Components/HomePage/Profile';
 import Weather from '../Components/HomePage/Weather';
+import News from '../Components/HomePage/News';
 
 
 const HomePage = () => {
@@ -17,7 +18,9 @@ const HomePage = () => {
                 </div>
                 <div className="lower"></div>
             </div>
-            <div className="right-container"></div>
+            <div className="right-container">
+                <News/>
+            </div>
         </div>
     )
 }

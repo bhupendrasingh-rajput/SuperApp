@@ -8,7 +8,7 @@ const Profile = () => {
   console.log(selectedItems)
   return (
     <div className="profile-box">
-      <img src={ProfileLogo} className="profile-logo" />
+      <img src={ProfileLogo} className="profile-logo" alt='profile-logo'/>
       <div className="profile-info">
         <div className="bio">
           <p>{profileData.name}</p>
