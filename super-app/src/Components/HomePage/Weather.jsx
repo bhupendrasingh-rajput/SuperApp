@@ -4,17 +4,12 @@ import PressureIcon from '../../Assets/PressureIcon.png';
 import WindIcon from '../../Assets/WindIcon.png';
 import HumidityIcon from '../../Assets/HumidityIcon.png';
 import LineIcon from '../../Assets/LineIcon.png';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Weather = () => {
   const [newDate, setNewDate] = useState(new Date());
-  const [weatherData, setWeatherData] = useState({
-    // condition: "",
-    // conditionIcon: "",
-    // temparature: "",
-    // pressure: "",
-    // wind: "",
-    // humidity: ""
-  })
+  const [weatherData, setWeatherData] = useState({});
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,6 +22,7 @@ const Weather = () => {
   let hours = newDate.getHours() % 12 || 12;
   hours = hours < 10 ? '0' + hours : hours;
   let minutes = newDate.getMinutes < 10 ? '0' + newDate.getMinutes() : newDate.getMinutes();
+
 
   const url = 'http://api.weatherapi.com/v1/current.json?key=862850afe1094ce982c135211232911&q=India&aqi=no';
   const fetchWeatherData = async () => {
@@ -46,14 +42,17 @@ const Weather = () => {
       )
     } catch (e) {
       console.error('Error in Weather fetching :', e);
+      toast.error("Error in Weather Fetching!");
     }
   };
+
 
   // console.log(weatherData);
 
 
   return (
     <div className='weather-box'>
+      <ToastContainer />
       <div className="date-time">
         <div className="date">
           {`${newDate.getMonth() + 1}-${newDate.getDate()}-${newDate.getFullYear()}`}

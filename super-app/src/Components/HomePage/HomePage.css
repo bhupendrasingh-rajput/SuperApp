@@ -156,6 +156,10 @@
 .weather-condition{
     font-size: 0.8rem;
     font-weight: 300;
+    overflow: scroll;
+}
+.weather-condition::-webkit-scrollbar{
+    display: none;
 }
 
 #temparature{
@@ -199,28 +203,66 @@
 
 /* Styles for News.jsx */
 .news-page{
-    /* border: 1px solid red; */
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-#news-pic{
-    height: 60.5%;
+.news-head{
+    /* border: 1px solid white; */
+    /* background-color: aquamarine ; */
+    position: relative;
+    flex: 1 0 60%;
+    /* height: 60.5%;
+    width: 100%; */
+    overflow: hidden;
+}
+
+#news-image{
     width: 100%;
-    background: rgb(228, 129, 0);
+    height: 100%;
     border-radius: 1rem 1rem 0 0;
+    object-fit: cover;
+}
+
+.news-overlay {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    padding: 3% 5%;
+    background: rgba(0, 0, 0, 0.74);
 }
 
 #news-heading{
-    position: relative;
-    background: rgba(0, 0, 0, 0.74);
-    width: 100%;
-    height: 25%;
-    top: 70%;
+    font-size: 1.2rem;
+    height: 60%;
+    overflow: scroll;
+}
+#news-heading::-webkit-scrollbar{
+    display: none;
+}
+
+#news-timing{
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    height: 20%;
 }
 
 #news-content{
     height: 39.5%;
+    font-size: 0.7rem;
+    padding: 6%;
+    line-height: 1.25rem;
+    word-spacing: 0.1rem;
+    text-align: justify;
     background: rgba(255, 255, 255, 1);
     border-radius: 0 0 1rem 1rem;
+    color: black;
 }
