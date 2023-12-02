@@ -1,5 +1,4 @@
 .home-page {
-    border: 1px solid white;
     height: 100%;
     width: 100%;
     padding: 2% 2% 4% 2%;
@@ -9,7 +8,6 @@
 }
 
 .left-container {
-    border: 1px solid white;
     height: 100%;
     width: 65%;
     display: flex;
@@ -17,14 +15,12 @@
 }
 
 .upper {
-    border: 1px solid white;
     height: 60%;
     width: 100%;
     display: flex;
 }
 
 .left-box {
-    border: 1px solid white;
     height: 100%;
     width: 50%;
     display: flex;
@@ -34,20 +30,18 @@
 }
 
 .right-box {
-    border: 1px solid rgb(205, 20, 20);
     height: 100%;
     width: 50%;
     padding: 1% 2%;
 }
 
 .lower {
-    border: 1px solid white;
     height: 40%;
     width: 100%;
+    padding: 1.5% 2% 1.5% 1%;
 }
 
 .right-container {
-    border: 1px solid white;
     height: 100%;
     width: 35%;
     padding: 1% 2%;
@@ -84,7 +78,7 @@
     padding: 5%;
     display: grid;
     grid-template-columns: 49% 49%;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 49% 49%;
     row-gap: 10%;
     justify-content: space-between;
     align-items: center;
@@ -98,7 +92,7 @@
 
 .item {
     min-width: 5rem;
-    min-height: 1.8rem;
+    min-height: 2rem;
     width: 100%;
     height: 100%;
     background: rgba(159, 148, 255, 1);
@@ -167,7 +161,6 @@
 #temparature {
     width: 100%;
     height: 50%;
-    /* border: 1px solid white; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -214,12 +207,8 @@
 }
 
 .news-head {
-    /* border: 1px solid white; */
-    /* background-color: aquamarine ; */
     position: relative;
     flex: 1 0 60%;
-    /* height: 60.5%;
-    width: 100%; */
     overflow: hidden;
 }
 
@@ -284,7 +273,6 @@
 }
 
 #notes-heading {
-    /* border: 1px solid white; */
     height: 15%;
     width: 100%;
     font-size: 1.5rem;
@@ -292,7 +280,6 @@
 }
 
 #notes-content {
-    /* border: 1px solid white; */
     height: 85%;
     width: 100%;
     padding-right: 3%;
@@ -307,15 +294,139 @@
     line-height: 1.2rem;
     font-weight: 400;
 }
-#notes-content::-webkit-scrollbar{
+
+#notes-content::-webkit-scrollbar {
     width: 0.5rem;
     height: 100%;
 }
+
 #notes-content::-webkit-scrollbar-track {
     background: transparent;
-    
+
 }
+
 #notes-content::-webkit-scrollbar-thumb {
     background: rgba(255, 230, 166, 1);
     border-radius: 5rem;
+}
+
+
+/* Styles for TimerCard.jsx */
+.timercard-page {
+    height: 100%;
+    width: 100%;
+    background: rgba(30, 35, 67, 1);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-around;
+    padding: 2% 5%;
+}
+
+#timer-circle {
+    height: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    box-shadow: 0 0 2rem 2rem rgba(0, 0, 0, 0.6) inset;
+}
+
+@keyframes boxShadowAnimation {
+    0% {
+      box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.6) inset;
+      transform: scale(1);
+    }
+    33% {
+      box-shadow: 0 0 2rem 2rem rgba(0, 0, 0, 0.2) inset;
+      transform: scale(1.05);
+    }
+    33% {
+        box-shadow: 0 0 4rem 4rem rgba(0, 0, 0, 0.4) inset;
+        transform: scale(1.05);
+      }
+    100% {
+      box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.6) inset;
+      transform: scale(1);
+    }
+  }
+
+#timer-box {
+    height: 100%;
+    width: 60%;
+    padding: 0% 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.set-timer{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#timer-start-stop{
+    width: 100%;
+    cursor: pointer;
+    background: rgba(255, 106, 106, 1);
+    height: 20%;
+    border:none;
+    border-radius: 5rem;
+    color: white;
+    font-family: Roboto;
+    font-size: 1rem;
+    transition: background-color 0.5s ease-in;
+}
+
+#timer-start-stop:hover{
+    background-color: rgb(84, 177, 68);
+}
+
+
+.time-box{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#inc-dec{
+    width: 1rem;
+    height: 0.7rem;
+    cursor: pointer;
+}
+
+#hh-mm-ss{
+    color: rgba(148, 148, 148, 1);
+}
+
+#timer-value{
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+#colon{
+    font-size: xx-large;
+    padding-top: 10%;
+}
+
+.browse-btn{
+    background: rgba(20, 138, 8, 1);
+    position: fixed;
+    bottom: 1.8%;
+    right: 4%;
+    height: 2rem;
+    width: 8rem;
+    display: grid;
+    place-items: center;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: white;
 }

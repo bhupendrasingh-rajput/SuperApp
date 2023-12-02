@@ -4,6 +4,7 @@ import Profile from '../Components/HomePage/Profile';
 import Weather from '../Components/HomePage/Weather';
 import News from '../Components/HomePage/News';
 import Notes from '../Components/HomePage/Notes';
+import TimerCard from '../Components/HomePage/TimerCard';
 
 
 const HomePage = () => {
@@ -19,7 +20,9 @@ const HomePage = () => {
                         <Notes/>
                     </div>
                 </div>
-                <div className="lower"></div>
+                <div className="lower">
+                    <TimerCard/>
+                </div>
             </div>
             <div className="right-container">
                 <News/>
