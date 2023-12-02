@@ -339,11 +339,11 @@
       transform: scale(1);
     }
     33% {
-      box-shadow: 0 0 2rem 2rem rgba(0, 0, 0, 0.2) inset;
+      box-shadow: 0 0 2rem 2rem rgba(0, 0, 0, 0.4) inset;
       transform: scale(1.05);
     }
     33% {
-        box-shadow: 0 0 4rem 4rem rgba(0, 0, 0, 0.4) inset;
+        box-shadow: 0 0 4rem 4rem rgba(0, 0, 0, 0.2) inset;
         transform: scale(1.05);
       }
     100% {

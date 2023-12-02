@@ -3,15 +3,19 @@ import Increment from '../../Assets/Increment.png';
 import Decrement from '../../Assets/Decrement.png';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import TimerAudio from '../../Assets/TimerAudio.mp3';
+import TicTacAudio from '../../Assets/TicTacAudio.mp3';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const TimerCard = () => {
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
     const [isStart, setIsStart] = useState(false);
-    const [audio] = useState(new Audio(TimerAudio));
-    const [buttonLabel, setButtonLabel] = useState('Start');
+    const [tictacAudio] = useState(new Audio(TicTacAudio));
+    const [timerAudio] = useState(new Audio(TimerAudio));
+    const [key, setKey] = useState(0);
 
     const calculateDuration = () => {
         return hours * 3600 + minutes * 60 + seconds;
@@ -30,27 +34,27 @@ const TimerCard = () => {
     };
 
     const handleStartStop = () => {
-        if (isStart) {
-            setIsStart(false);
-            setHours(0);
-            setMinutes(0);
-            setSeconds(0);
-            setButtonLabel('Start');
+        if (calculateDuration() > 0) {
+            if (isStart) {
+                setIsStart(false);
+                    setHours(0);
+                    setMinutes(0);
+                    setSeconds(0);
+            } else {
+                setIsStart(true);
+            }
         } else {
-
-            setIsStart(true);
-            setButtonLabel('Stop');
-
+            toast.error("Select Duration First!");
         }
     };
 
-    const onComplete = ({ remainingTime }) => {
-        audio.play().catch((error) => console.error('Error playing audio:', error));
+    const onComplete = () => {
+        timerAudio.play().catch((error) => console.error('Error playing audio:', error));
         setHours(0);
         setMinutes(0);
         setSeconds(0);
         setIsStart(false);
-        setButtonLabel('Start');
+        setKey((prevKey) => prevKey + 1);
     };
 
 
@@ -69,6 +73,7 @@ const TimerCard = () => {
         <div className="timercard-page">
             <div id="timer-circle" style={isStart ? { animation: 'boxShadowAnimation 1s infinite ease-in-out' } : {}}>
                 <CountdownCircleTimer
+                    key={key}
                     isPlaying={isStart}
                     duration={calculateDuration()}
                     colors={['#FF6A6A']}
