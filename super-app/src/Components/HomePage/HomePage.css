@@ -1,14 +1,14 @@
-.home-page{
+.home-page {
     border: 1px solid white;
     height: 100%;
     width: 100%;
     padding: 2% 2% 4% 2%;
     display: flex;
-    font-family: Roboto;    
+    font-family: Roboto;
     color: white;
 }
 
-.left-container{
+.left-container {
     border: 1px solid white;
     height: 100%;
     width: 65%;
@@ -16,14 +16,14 @@
     flex-direction: column;
 }
 
-.upper{
+.upper {
     border: 1px solid white;
     height: 60%;
     width: 100%;
     display: flex;
 }
 
-.left-box{
+.left-box {
     border: 1px solid white;
     height: 100%;
     width: 50%;
@@ -33,19 +33,20 @@
     padding: 1%;
 }
 
-.right-box{
-    border: 1px solid white;
+.right-box {
+    border: 1px solid rgb(205, 20, 20);
     height: 100%;
     width: 50%;
+    padding: 1% 2%;
 }
 
-.lower{
+.lower {
     border: 1px solid white;
     height: 40%;
     width: 100%;
 }
 
-.right-container{
+.right-container {
     border: 1px solid white;
     height: 100%;
     width: 35%;
@@ -53,24 +54,24 @@
 }
 
 /* Styles For Profile.jsx */
-.profile-box{
+.profile-box {
     height: 60%;
     width: 100%;
     padding: 4%;
-    display: flex;  
+    display: flex;
     justify-content: space-between;
     background: rgba(87, 70, 234, 1);
     border-radius: 1rem;
 }
 
-.profile-info{
+.profile-info {
     width: 75%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.bio{
+.bio {
     height: 50%;
     padding: 3% 5%;
     display: flex;
@@ -78,7 +79,7 @@
     font-weight: 300;
 }
 
-.selected-items{
+.selected-items {
     height: 50%;
     padding: 5%;
     display: grid;
@@ -91,11 +92,11 @@
     font-weight: 300;
 }
 
-.selected-items::-webkit-scrollbar{
+.selected-items::-webkit-scrollbar {
     display: none;
 }
 
-.item{
+.item {
     min-width: 5rem;
     min-height: 1.8rem;
     width: 100%;
@@ -108,13 +109,13 @@
 }
 
 /* Styles for weather.jsx */
-.weather-box{  
+.weather-box {
     position: relative;
     height: 35%;
     width: 100%;
 }
 
-.date-time{
+.date-time {
     background: rgba(255, 74, 222, 1);
     height: 30%;
     border-radius: 1rem 1rem 0 0;
@@ -126,14 +127,14 @@
     padding: 0 5%;
 }
 
-.weather{
+.weather {
     background: rgba(16, 23, 68, 1);
     height: 70%;
     border-radius: 0 0 1rem 1rem;
     display: flex;
 }
 
-.todays-weather{
+.todays-weather {
     width: 33%;
     height: 100%;
     padding: 2% 3%;
@@ -143,26 +144,27 @@
     align-items: center;
 }
 
-#line-icon{
+#line-icon {
     height: 100%;
     padding: 1.5rem 0;
 }
 
-.weather-icon{
+.weather-icon {
     height: 3rem;
     width: 4rem;
 }
 
-.weather-condition{
+.weather-condition {
     font-size: 0.8rem;
     font-weight: 300;
     overflow: scroll;
 }
-.weather-condition::-webkit-scrollbar{
+
+.weather-condition::-webkit-scrollbar {
     display: none;
 }
 
-#temparature{
+#temparature {
     width: 100%;
     height: 50%;
     /* border: 1px solid white; */
@@ -173,7 +175,7 @@
     font-size: 2rem;
 }
 
-.pressure{
+.pressure {
     width: 100%;
     height: 50%;
     font-size: 0.55rem;
@@ -185,7 +187,8 @@
     column-gap: 2%;
 }
 
-.wind, .humidity{
+.wind,
+.humidity {
     display: flex;
     justify-content: center;
     gap: 5%;
@@ -196,20 +199,21 @@
     font-size: 0.6rem;
 }
 
-#wind-icon, #humidity-icon{
+#wind-icon,
+#humidity-icon {
     height: 1rem;
     width: 1rem;
 }
 
 /* Styles for News.jsx */
-.news-page{
+.news-page {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.news-head{
+.news-head {
     /* border: 1px solid white; */
     /* background-color: aquamarine ; */
     position: relative;
@@ -219,7 +223,7 @@
     overflow: hidden;
 }
 
-#news-image{
+#news-image {
     width: 100%;
     height: 100%;
     border-radius: 1rem 1rem 0 0;
@@ -239,23 +243,24 @@
     background: rgba(0, 0, 0, 0.74);
 }
 
-#news-heading{
+#news-heading {
     font-size: 1.25rem;
     height: 60%;
     overflow: scroll;
 }
-#news-heading::-webkit-scrollbar{
+
+#news-heading::-webkit-scrollbar {
     display: none;
 }
 
-#news-timing{
+#news-timing {
     font-size: 0.8rem;
     display: flex;
     align-items: center;
     height: 20%;
 }
 
-#news-content{
+#news-content {
     height: 39.5%;
     font-size: 0.7rem;
     padding: 6%;
@@ -265,4 +270,52 @@
     background: rgba(255, 255, 255, 1);
     border-radius: 0 0 1rem 1rem;
     color: black;
+}
+
+/* Styles for Notes.jsx */
+
+.notes-page {
+    background: rgba(241, 199, 91, 1);
+    border-radius: 1rem;
+    height: 100%;
+    padding: 6% 2% 6% 6%;
+    padding-right: none;
+    color: rgba(0, 0, 0, 1);
+}
+
+#notes-heading {
+    /* border: 1px solid white; */
+    height: 15%;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+#notes-content {
+    /* border: 1px solid white; */
+    height: 85%;
+    width: 100%;
+    padding-right: 3%;
+    overflow-y: scroll;
+    resize: none;
+    outline: none;
+    border: none;
+    text-align: justify;
+    background-color: transparent;
+    font-family: Roboto;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    font-weight: 400;
+}
+#notes-content::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 100%;
+}
+#notes-content::-webkit-scrollbar-track {
+    background: transparent;
+    
+}
+#notes-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 230, 166, 1);
+    border-radius: 5rem;
 }

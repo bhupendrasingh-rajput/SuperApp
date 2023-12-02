@@ -51,7 +51,7 @@ const News = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentNewsIndex((prevIndex) => (prevIndex + 1) % newsData.length);
-        }, 5000);
+        }, 30000);
         return () => clearInterval(intervalId);
     }, [newsData]);
 
