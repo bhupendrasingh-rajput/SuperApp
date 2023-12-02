@@ -240,7 +240,7 @@
 }
 
 #news-heading{
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     height: 60%;
     overflow: scroll;
 }
@@ -249,7 +249,7 @@
 }
 
 #news-timing{
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     display: flex;
     align-items: center;
     height: 20%;

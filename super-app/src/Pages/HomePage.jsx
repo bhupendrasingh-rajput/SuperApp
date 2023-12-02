@@ -3,6 +3,7 @@ import '../Components/HomePage/HomePage.css';
 import Profile from '../Components/HomePage/Profile';
 import Weather from '../Components/HomePage/Weather';
 import News from '../Components/HomePage/News';
+import Notes from '../Components/HomePage/Notes';
 
 
 const HomePage = () => {
@@ -14,7 +15,9 @@ const HomePage = () => {
                         <Profile/>
                         <Weather/>
                     </div>
-                    <div className="right-box"></div>
+                    <div className="right-box">
+                        <Notes/>
+                    </div>
                 </div>
                 <div className="lower"></div>
             </div>
