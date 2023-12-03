@@ -48,7 +48,6 @@
 }
 
 .form-heading{
-    /* border: 1px solid white; */
     width: 100%;
     height: 15%;
     text-align: center;
@@ -68,7 +67,6 @@
 }
 
 .form-container form{
-    /* border: 1px solid white; */
     width: 100%;
     height: 85%;
     padding: 3% 1%;

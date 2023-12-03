@@ -47,9 +47,6 @@ const Weather = () => {
   };
 
 
-  // console.log(weatherData);
-
-
   return (
     <div className='weather-box'>
       <ToastContainer />

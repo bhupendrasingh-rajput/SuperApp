@@ -15,7 +15,6 @@ const formattedTime = (newsTime) => {
     hours = hours < 10 ? '0' + hours : hours;
     let minutes = newsTime.getMinutes < 10 ? '0' + newsTime.getMinutes() : newsTime.getMinutes();
     let AmPm = newsTime.getHours() >= 12 ? 'PM' : 'AM';
-    // console.log(hours, minutes, AmPm);
     return `${hours}:${minutes} ${AmPm}`
 }
 

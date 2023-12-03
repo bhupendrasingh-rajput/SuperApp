@@ -61,7 +61,6 @@ const SignupForm = () => {
         if (Object.keys(currentErrors).length === 0) {
             localStorage.setItem('userData', JSON.stringify(userData));
             console.log('Form submitted:', userData);
-            console.log(termsAccepted);
             Navigate('/categories');
         }
     }

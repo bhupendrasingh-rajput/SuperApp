@@ -10,17 +10,59 @@
     font-family: Roboto;
 }
 
-.entertainment-page nav{
-    border: 1px solid white;
+.entertainment-page nav {
+    height: 12%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.browse-logo {
+    height: 100%;
+    width: 13%;
+    display: flex;
+    align-items: center;
+    font-family: Single Day;
+    font-size: 2rem;
+    color: rgba(114, 219, 115, 1);
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+.browse-logo:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.profile-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 8%;
+    overflow: hidden;
+}
+
+#circle-profile {
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 5rem;
+    object-fit: fill;
+    border: 2px solid white;
+    transition: transform 0.3s ease-in;
+}
+#circle-profile:hover{
+    transform: scale(1.1);
 }
 
 .page-heading {
-    background-color: rgba(50, 60, 70, 0.2);
     height: 10%;
     display: flex;
     align-items: center;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .browse-categories {
@@ -47,7 +89,6 @@
 .browsed-category {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid white; */
     height: 32%;
     width: 100%;
 }
@@ -84,7 +125,7 @@
 }
 
 #movie-poster {
-    object-fit:cover;
+    object-fit: cover;
     cursor: pointer;
     height: 100%;
     width: 100%;

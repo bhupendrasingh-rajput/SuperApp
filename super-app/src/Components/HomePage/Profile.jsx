@@ -5,7 +5,6 @@ import ProfileLogo from '../../Assets/ProfileLogo.png'
 const Profile = () => {
   const profileData = JSON.parse(localStorage.getItem('userData'));
   const selectedItems = JSON.parse(localStorage.getItem('selectedCategories'));
-  console.log(selectedItems)
   return (
     <div className="profile-box">
       <img src={ProfileLogo} className="profile-logo" alt='profile-logo'/>

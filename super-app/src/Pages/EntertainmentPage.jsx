@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import '../Components/Entertainment/EntertainmentPage.css'
 import axios from 'axios';
+import ProfileCircle from '../Assets/ProfileLogo.png';
+import { useNavigate } from 'react-router-dom';
 
 const EntertainmentPage = () => {
     const selectedCategories = JSON.parse(localStorage.getItem('selectedCategories'));
-    
+    const navigate = useNavigate();
     const apiKey = 'da6b8268';
     const baseApiUrl = 'https://www.omdbapi.com/';
     const [moviesData, setMoviesData] = useState({});
@@ -31,22 +33,32 @@ const EntertainmentPage = () => {
         fetchMoviesForSelectedGenres();
     }, [selectedCategories]);
 
+    const handleToggle = () =>{
+        navigate('/home')
+    }
+
     return (
         <div className='entertainment-page'>
+            <nav>
+                <div className="browse-logo">Super app</div>
+                <div className="profile-circle">
+                    <img id='circle-profile' src={ProfileCircle} alt="circle-profile" onClick={handleToggle}/>
+                </div>
+            </nav>
             <div className="page-heading">Entertainment according to your choice</div>
             <div className="browse-categories">
-            {Object.keys(moviesData).map((genre) => (
-                        <div className="browsed-category" key={genre}>
-                            <div className="category-name">{genre}</div>
-                            <div className="category-content">
+                {Object.keys(moviesData).map((genre) => (
+                    <div className="browsed-category" key={genre}>
+                        <div className="category-name">{genre}</div>
+                        <div className="category-content">
                             {moviesData[genre].map((movie, index) => (
                                 <div key={index} className="movie-poster">
-                                <img id='movie-poster' src={movie.Poster}/>
+                                    <img id='movie-poster' src={movie.Poster} />
                                 </div>
                             ))}
-                            </div>
                         </div>
-                    ))
+                    </div>
+                ))
                 }
             </div>
         </div>
