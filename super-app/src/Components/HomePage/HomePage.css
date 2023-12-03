@@ -419,6 +419,7 @@
 
 .browse-btn{
     background: rgba(20, 138, 8, 1);
+    border: none;
     position: fixed;
     bottom: 1.8%;
     right: 4%;

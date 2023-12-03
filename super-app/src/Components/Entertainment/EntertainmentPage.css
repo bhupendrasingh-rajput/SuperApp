@@ -1,0 +1,9 @@
+.entertainment-page {
+    border: 1px solid white;
+    height: 100%;
+    width: 100%;
+    padding: 5% 2% 2% 2%;
+    display: flex;
+    font-family: Roboto;
+    color: white;
+}

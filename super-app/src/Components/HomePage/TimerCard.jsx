@@ -4,7 +4,6 @@ import Decrement from '../../Assets/Decrement.png';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import TimerAudio from '../../Assets/TimerAudio.mp3';
 import TicTacAudio from '../../Assets/TicTacAudio.mp3';
-import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -110,8 +109,6 @@ const TimerCard = () => {
                     {isStart ? 'Stop' : 'Start'}
                 </button>
             </div>
-
-            <Link to='entertainment' className='browse-btn'>Browse</Link>
         </div>
     );
 };
