@@ -21,26 +21,6 @@ const formattedTime = (newsTime) => {
 const News = () => {
     const [newsData, setNewsData] = useState([]);
 
-    // var url = 'https://newsapi.org/v2/top-headlines?' +
-    //     'country=us&' +
-    //     'apiKey=e97142b4176643abb7f7e6081808c9e7';
-
-    // const getNews = async () => {
-    //     try {
-    //         const response = await axios.get(url);
-    //         const newsArray = response.data.articles.map((item) => ({
-    //             newsImage: item.urlToImage,
-    //             newsHeading: item.title,
-    //             newsDescription: item.description,
-    //             newsPublishedAt: item.publishedAt,
-    //         }));
-    //         setNewsData(newsArray);
-    //     } catch (e) {
-    //         console.error("Error in fetching News :", e);
-    //         toast.error("Error in fetching News!",)
-    //     }
-    // }
-
     const headers = {
         'apikey': 'jawrEKjcpdYDvmWcD3rfqiGAYZJeovyk',
     };

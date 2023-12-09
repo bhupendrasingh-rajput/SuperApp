@@ -254,14 +254,15 @@
     height: 40%;
     width: 100%;
     font-size: 0.7rem;
-    padding: 6%;
-    line-height: 1.25rem;
+    padding: 1rem;
+    line-height: 1.2rem;
     word-spacing: 0.1rem;
     background: rgba(255, 255, 255, 1);
     border-radius: 0 0 1rem 1rem;
     color: black;
     text-align: justify;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Styles for Notes.jsx */
