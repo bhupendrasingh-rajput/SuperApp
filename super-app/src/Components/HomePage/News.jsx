@@ -32,7 +32,6 @@ const News = () => {
     const getNews = async () => {
         try {
             const response = await axios.get('https://api.apilayer.com/world_news/search-news', {headers ,params});
-            console.log(response.data);
             const newsArray = response.data.news.map((item) => ({
                 newsImage: item.image,
                 newsHeading: item.title,

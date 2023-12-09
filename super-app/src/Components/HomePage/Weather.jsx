@@ -4,7 +4,7 @@ import PressureIcon from '../../Assets/PressureIcon.png';
 import WindIcon from '../../Assets/WindIcon.png';
 import HumidityIcon from '../../Assets/HumidityIcon.png';
 import LineIcon from '../../Assets/LineIcon.png';
-import Weather from '../../Assets/Weather.png';
+import WeatherIcon from '../../Assets/Weather.png';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -33,7 +33,6 @@ const Weather = () => {
     try {
       await axios.get(url).then(
         (response) => {
-          console.log(response.data)
           setWeatherData({
             condition: response.data.weather[0].main,
             conditionIcon: response.data.weather[0].icon,
@@ -64,7 +63,7 @@ const Weather = () => {
       </div>
       <div className="weather">
         <div className='todays-weather' id="weather-condition">
-          <img className="weather-icon" src={Weather || weatherData.conditionIcon} alt='W-Icon'></img>
+          <img className="weather-icon" src={ WeatherIcon || weatherData.conditionIcon } alt='W-Icon'></img>
           <div className="weather-condition">{weatherData.condition}</div>
         </div>
         <img id='line-icon' src={LineIcon} alt="Line-Icon" />
