@@ -94,6 +94,7 @@ const SignupForm = () => {
 
                     <input type="text"
                         inputMode="numeric"
+                        maxLength={10}
                         pattern="[0-9]*"
                         className={`form-input ${inputError.mobile ? "missing-error" : ""}`}
                         placeholder='Mobile' name='mobile' value={userData.mobile}

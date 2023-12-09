@@ -4,6 +4,7 @@ import PressureIcon from '../../Assets/PressureIcon.png';
 import WindIcon from '../../Assets/WindIcon.png';
 import HumidityIcon from '../../Assets/HumidityIcon.png';
 import LineIcon from '../../Assets/LineIcon.png';
+import Weather from '../../Assets/Weather.png';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -27,9 +28,6 @@ const Weather = () => {
   let minutes = newDate.getMinutes < 10 ? '0' + newDate.getMinutes() : newDate.getMinutes();
 
 
-  // const url = 'http://api.weatherapi.com/v1/current.json?key=862850afe1094ce982c135211232911&q=India&aqi=no';
-  // const url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/india?unitGroup=metric&key=6ND3FTVJ7S96ZXPUDZ9CR2BQJ&contentType=json';
-  // const url = 'http://api.weatherstack.com/current?access_key=aafc61883fa05c025d0f08a28deab8dc&query=India';
   const url = 'https://api.openweathermap.org/data/2.5/weather?q=delhi&appid=168a4cb69d793f3cba844cbac36357e6';
   const fetchWeatherData = async () => {
     try {
@@ -52,9 +50,6 @@ const Weather = () => {
     }
   };
 
-  // const convertFahrenheitToCelsius = (fahrenheit ) =>{
-  //   return Math.round((fahrenheit - 32) * 5 / 9);
-  // }
 
   return (
     <div className='weather-box'>
@@ -69,7 +64,7 @@ const Weather = () => {
       </div>
       <div className="weather">
         <div className='todays-weather' id="weather-condition">
-          <img className="weather-icon" src={weatherData.conditionIcon} alt='W-Icon'></img>
+          <img className="weather-icon" src={Weather || weatherData.conditionIcon} alt='W-Icon'></img>
           <div className="weather-condition">{weatherData.condition}</div>
         </div>
         <img id='line-icon' src={LineIcon} alt="Line-Icon" />
