@@ -14,16 +14,12 @@ const Weather = () => {
   useEffect(() => {
     fetchWeatherData();
     const interval = setInterval(() => {
-      setNewDate((prevDate) => {
-        const newDateCopy = new Date(prevDate);
-        newDateCopy.setSeconds(newDateCopy.getSeconds() + 1);
-        return newDateCopy;
-      });
+      setNewDate(new Date());
     }, 1000);
-  
+
     return () => clearInterval(interval);
   }, []);
-  
+
 
   let AmPm = newDate.getHours() >= 12 ? 'PM' : 'AM';
   let hours = newDate.getHours() % 12 || 12;
@@ -33,23 +29,21 @@ const Weather = () => {
 
   // const url = 'http://api.weatherapi.com/v1/current.json?key=862850afe1094ce982c135211232911&q=India&aqi=no';
   // const url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/india?unitGroup=metric&key=6ND3FTVJ7S96ZXPUDZ9CR2BQJ&contentType=json';
-  const url = 'http://api.weatherstack.com/current?access_key=aafc61883fa05c025d0f08a28deab8dc&query=India';
+  // const url = 'http://api.weatherstack.com/current?access_key=aafc61883fa05c025d0f08a28deab8dc&query=India';
+  const url = 'https://api.openweathermap.org/data/2.5/weather?q=delhi&appid=168a4cb69d793f3cba844cbac36357e6';
   const fetchWeatherData = async () => {
     try {
       await axios.get(url).then(
         (response) => {
           console.log(response.data)
-          if (response.data && response.data.location) {
-            setWeatherData({
-              condition: response.data.current.weather_descriptions[0],
-              conditionIcon: response.data.current.weather_icons[0],
-              temparature: response.data.current.temperature,
-              pressure: response.data.current.pressure,
-              wind: response.data.current.wind_speed,
-              humidity: response.data.current.humidity
-            })
-            setNewDate(new Date(response.data.location.localtime))
-          }
+          setWeatherData({
+            condition: response.data.weather[0].main,
+            conditionIcon: response.data.weather[0].icon,
+            temparature: response.data.main.temp,
+            pressure: response.data.main.pressure,
+            wind: response.data.wind.speed,
+            humidity: response.data.main.humidity
+          })
         }
       )
     } catch (e) {
@@ -58,6 +52,9 @@ const Weather = () => {
     }
   };
 
+  // const convertFahrenheitToCelsius = (fahrenheit ) =>{
+  //   return Math.round((fahrenheit - 32) * 5 / 9);
+  // }
 
   return (
     <div className='weather-box'>
@@ -77,7 +74,7 @@ const Weather = () => {
         </div>
         <img id='line-icon' src={LineIcon} alt="Line-Icon" />
         <div className='todays-weather' id="temp-pressure">
-          <div id='temparature'>{weatherData.temparature}°C</div>
+          <div id='temparature'>{Math.round(weatherData.temparature - 273.15)}°C</div>
           <div className="pressure">
             <img id='pressure-icon' src={PressureIcon} alt="pressure-icon" />
             <div id="pressure-value">{weatherData.pressure} mbar Pressure</div>
