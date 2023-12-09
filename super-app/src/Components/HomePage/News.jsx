@@ -21,18 +21,43 @@ const formattedTime = (newsTime) => {
 const News = () => {
     const [newsData, setNewsData] = useState([]);
 
-    var url = 'https://newsapi.org/v2/top-headlines?' +
-        'country=us&' +
-        'apiKey=e97142b4176643abb7f7e6081808c9e7';
+    // var url = 'https://newsapi.org/v2/top-headlines?' +
+    //     'country=us&' +
+    //     'apiKey=e97142b4176643abb7f7e6081808c9e7';
+
+    // const getNews = async () => {
+    //     try {
+    //         const response = await axios.get(url);
+    //         const newsArray = response.data.articles.map((item) => ({
+    //             newsImage: item.urlToImage,
+    //             newsHeading: item.title,
+    //             newsDescription: item.description,
+    //             newsPublishedAt: item.publishedAt,
+    //         }));
+    //         setNewsData(newsArray);
+    //     } catch (e) {
+    //         console.error("Error in fetching News :", e);
+    //         toast.error("Error in fetching News!",)
+    //     }
+    // }
+
+    const headers = {
+        'apikey': 'jawrEKjcpdYDvmWcD3rfqiGAYZJeovyk',
+    };
+
+    const params = {
+        'source-countries': 'us,in',
+    };
 
     const getNews = async () => {
         try {
-            const response = await axios.get(url);
-            const newsArray = response.data.articles.map((item) => ({
-                newsImage: item.urlToImage,
+            const response = await axios.get('https://api.apilayer.com/world_news/search-news', {headers ,params});
+            console.log(response.data);
+            const newsArray = response.data.news.map((item) => ({
+                newsImage: item.image,
                 newsHeading: item.title,
-                newsDescription: item.description,
-                newsPublishedAt: item.publishedAt,
+                newsDescription: item.text,
+                newsPublishedAt: item.publish_date,
             }));
             setNewsData(newsArray);
         } catch (e) {
@@ -40,6 +65,7 @@ const News = () => {
             toast.error("Error in fetching News!",)
         }
     }
+
 
     useEffect(() => {
         getNews()

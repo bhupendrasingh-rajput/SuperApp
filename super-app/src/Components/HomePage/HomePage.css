@@ -250,15 +250,18 @@
 }
 
 #news-content {
-    height: 39.5%;
+    position: relative;
+    height: 40%;
+    width: 100%;
     font-size: 0.7rem;
     padding: 6%;
     line-height: 1.25rem;
     word-spacing: 0.1rem;
-    text-align: justify;
     background: rgba(255, 255, 255, 1);
     border-radius: 0 0 1rem 1rem;
     color: black;
+    text-align: justify;
+    overflow: hidden;
 }
 
 /* Styles for Notes.jsx */
@@ -335,22 +338,25 @@
 
 @keyframes boxShadowAnimation {
     0% {
-      box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.6) inset;
-      transform: scale(1);
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.6) inset;
+        transform: scale(1);
     }
+
     33% {
-      box-shadow: 0 0 2rem 2rem rgba(0, 0, 0, 0.4) inset;
-      transform: scale(1.05);
+        box-shadow: 0 0 2rem 2rem rgba(0, 0, 0, 0.4) inset;
+        transform: scale(1.05);
     }
+
     33% {
         box-shadow: 0 0 4rem 4rem rgba(0, 0, 0, 0.2) inset;
         transform: scale(1.05);
-      }
-    100% {
-      box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.6) inset;
-      transform: scale(1);
     }
-  }
+
+    100% {
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.6) inset;
+        transform: scale(1);
+    }
+}
 
 #timer-box {
     height: 100%;
@@ -362,7 +368,7 @@
     justify-content: space-between;
 }
 
-.set-timer{
+.set-timer {
     width: 100%;
     height: 70%;
     display: flex;
@@ -370,12 +376,12 @@
     align-items: center;
 }
 
-#timer-start-stop{
+#timer-start-stop {
     width: 100%;
     cursor: pointer;
     background: rgba(255, 106, 106, 1);
     height: 20%;
-    border:none;
+    border: none;
     border-radius: 5rem;
     color: white;
     font-family: Roboto;
@@ -383,12 +389,12 @@
     transition: background-color 0.5s ease-in;
 }
 
-#timer-start-stop:hover{
+#timer-start-stop:hover {
     background-color: rgb(84, 177, 68);
 }
 
 
-.time-box{
+.time-box {
     width: 30%;
     height: 100%;
     display: flex;
@@ -397,27 +403,27 @@
     align-items: center;
 }
 
-#inc-dec{
+#inc-dec {
     width: 1rem;
     height: 0.7rem;
     cursor: pointer;
 }
 
-#hh-mm-ss{
+#hh-mm-ss {
     color: rgba(148, 148, 148, 1);
 }
 
-#timer-value{
+#timer-value {
     font-size: 2rem;
     font-weight: 300;
 }
 
-#colon{
+#colon {
     font-size: xx-large;
     padding-top: 10%;
 }
 
-.browse-btn{
+.browse-btn {
     background: rgba(20, 138, 8, 1);
     border: none;
     position: fixed;
