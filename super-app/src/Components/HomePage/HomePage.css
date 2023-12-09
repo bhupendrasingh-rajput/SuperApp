@@ -281,12 +281,13 @@
     width: 100%;
     font-size: 1.5rem;
     font-weight: 500;
+    padding: 0 5%;
 }
 
 #notes-content {
     height: 85%;
     width: 100%;
-    padding-right: 3%;
+    padding: 5%;
     overflow-y: scroll;
     resize: none;
     outline: none;
