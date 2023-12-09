@@ -281,7 +281,7 @@
     width: 100%;
     font-size: 1.5rem;
     font-weight: 500;
-    padding: 0 5%;
+    padding: 3%;
 }
 
 #notes-content {
@@ -296,7 +296,7 @@
     background-color: transparent;
     font-family: Roboto;
     font-size: 0.8rem;
-    line-height: 1.2rem;
+    line-height: 1.25rem;
     font-weight: 400;
 }
 

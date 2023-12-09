@@ -12,11 +12,18 @@ const Weather = () => {
   const [weatherData, setWeatherData] = useState({});
 
   useEffect(() => {
+    fetchWeatherData();
     const interval = setInterval(() => {
-      fetchWeatherData();
-    }, 60000)
+      setNewDate((prevDate) => {
+        const newDateCopy = new Date(prevDate);
+        newDateCopy.setSeconds(newDateCopy.getSeconds() + 1);
+        return newDateCopy;
+      });
+    }, 1000);
+  
     return () => clearInterval(interval);
   }, []);
+  
 
   let AmPm = newDate.getHours() >= 12 ? 'PM' : 'AM';
   let hours = newDate.getHours() % 12 || 12;
@@ -24,20 +31,25 @@ const Weather = () => {
   let minutes = newDate.getMinutes < 10 ? '0' + newDate.getMinutes() : newDate.getMinutes();
 
 
-  const url = 'http://api.weatherapi.com/v1/current.json?key=862850afe1094ce982c135211232911&q=India&aqi=no';
+  // const url = 'http://api.weatherapi.com/v1/current.json?key=862850afe1094ce982c135211232911&q=India&aqi=no';
+  // const url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/india?unitGroup=metric&key=6ND3FTVJ7S96ZXPUDZ9CR2BQJ&contentType=json';
+  const url = 'http://api.weatherstack.com/current?access_key=aafc61883fa05c025d0f08a28deab8dc&query=India';
   const fetchWeatherData = async () => {
     try {
       await axios.get(url).then(
         (response) => {
-          setNewDate(new Date(response.data.location.localtime))
-          setWeatherData({
-            condition: response.data.current.condition.text,
-            conditionIcon: response.data.current.condition.icon,
-            temparature: response.data.current.temp_c,
-            pressure: response.data.current.pressure_mb,
-            wind: response.data.current.wind_kph,
-            humidity: response.data.current.humidity
-          })
+          console.log(response.data)
+          if (response.data && response.data.location) {
+            setWeatherData({
+              condition: response.data.current.weather_descriptions[0],
+              conditionIcon: response.data.current.weather_icons[0],
+              temparature: response.data.current.temperature,
+              pressure: response.data.current.pressure,
+              wind: response.data.current.wind_speed,
+              humidity: response.data.current.humidity
+            })
+            setNewDate(new Date(response.data.location.localtime))
+          }
         }
       )
     } catch (e) {
